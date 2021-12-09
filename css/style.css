@@ -1,125 +1,177 @@
-:root{
-   --fundo:#fff;
-   --titulo:2.5rem;
+:root {
+   --fundo-1: #f7f7f7;
+   --fundo-2: #ffffff;
+   --titulo: #000;
    --titulo: #111;
-   --subtitulo:1.8rem
+   --subtitulo: 1.8rem;
+   --paragrafo: 1.3rem;
+   --navegacao: #ffffff;
+   --subtituloVantagens: #f0eeee;
+   --vantagens-itens: #000;
+   --rodape:#ffffff;
 }
-@media(prefers-color-scheme:dark){
-   html{
-      --fundo:#222;
-      --titulo:#fff;
-      --subtitulo:#bbb;
+
+@media(prefers-color-scheme:dark) {
+   :root {
+      --fundo-1: #111;
+      --fundo-2: #ffffff;
+      --titulo: #ffffff;
+      --navegacao: #ffffff;
+      --subtituloVantagens: #f1efef;;
+      --vantagens-itens: #000;
+      --rodape:#ffffff;
    }
 }
+@media(prefers-color-scheme:ligth) {
+   :root {
+      --fundo-1: #111;
+      --fundo-2: #ffffff;
+      --titulo: #000;
+      --navegacao: #ffffff;
+      --subtituloVantagens: #b6b4b4;
+      --vantagens-itens: #000;
+      --rodape:#ffffff;
+   }
+}
+
 body {
    font-family: Arial, Helvetica, sans-serif;
+   color: var(--titulo);
    margin: 0px;
    display: grid;
    gap: 120px;
    justify-items: center;
    margin-top: 60px;
-   background-color: #f7f7f7;
- }
- 
- img {
-    
+   background-color: var(--fundo-1);
+}
+
+img {
+
    max-width: 100%;
    display: block;
    object-fit: cover;
    height: 100%;
- }
+}
 
- a {
+a {
    text-decoration: none;
- }
- 
- ul {
+}
+
+ul {
    margin: 0px;
    padding: 0px;
    list-style: none;
- }
- 
- p,
- h1,
- h2,
- h3 {
+}
+
+p,
+h1,
+h2,
+h3 {
    margin: 0px;
- }
- 
- p {
-   font-size: 1.25rem;
+}
+
+p {
+   font-size: var(--paragrafo);
    line-height: 1.3;
- }
-.foto{
-   display:flex;
+}
+
+.foto {
+   display: flex;
    flex-wrap: wrap;
    justify-content: center;
    gap: 20px;
    padding: 13px;
 }
+
 .navegacao {
-display:flex;
-gap: 90px;
-list-style: none;
-font-size: 2.9rem;
-font-family: Roboto;
-margin: 0 auto;
-margin-top: 10px;
+   display: flex;
+   gap: 90px;
+   list-style: none;
+   font-size: 2.9rem;
+   font-family: Roboto;
+   margin: 0 auto;
+   margin-top: 10px;
 }
-ul li{
+
+ul li {
    list-style: none;
 }
-.navegacao a{
-   font-size:1.1rem;
+.svg{
+   margin-left: 205px;
+   padding: 25px 10px;
+
+   
+}
+.navegacao a {
+   font-size: 1.1rem;
    padding: 18px;
-   background-color: #fff;
+   background-color: var(--fundo-2);
    text-decoration: none;
    border-radius: 5px;
-   color:#000000;
+   color: #000000;
    text-transform: uppercase;
    display: block;
-   border: 2px solid #fff;
+   border: 2px solid ffffff;
 }
-.navegacao a:hover{
+
+.navegacao a:hover {
    border-color: #ee2211;
 
 }
 
-p, h1,h2,h3{
+p,
+h1,
+h2,
+h3 {
    margin: 0px;
-  
-}
-h1{
-   font-size: 2.3rem;
-   padding:0.8rem;
-   text-transform:capitalize;
+
 }
 
-p{
-   font-size: 1.3rem;
-   line-height:23px;
-   text-align:start;
+h1 {
+   font-size: 2.3rem;
+   padding: 0.8rem;
+   text-transform: capitalize;
 }
-.conteudo{
-   display:grid;
+
+p {
+   font-size: 1.3rem;
+   line-height: 23px;
+   text-align: start;
+}
+
+.conteudo {
+   display: grid;
    grid-template-columns: 1fr 1fr;
    max-width: 1000px;
-   
+   border-radius: 5px;
 }
-.introducao{
-   background-color:#fff;
-   padding: 2.5rem;
+
+.introducao {
+  /* background-color: var(--fundo-1);*/
+  background-color:var(--fundo-2);
+   padding: var(--titulo);
    text-align: right;
    position: relative;
    right: 0%;
-   z-index:-30px;
+   z-index: -30px;
    display: grid;
    align-content: center;
    justify-items: end;
+   border-radius: 5px;
 }
-.introducao h1{
+.titulo + p{
+   color: var(--subtituloVantagens);
+}
+.introducao h1 {
    font: size 2rem;
+   margin-right: 55px;
+   color: #000;
 }
+.introducao p{
+   color: var(--vantagens-itens);
+   font-size: 1.3rem;
+}
+
 .introducao::before {
    content: '';
    width: 60px;
@@ -128,101 +180,129 @@ p{
    position: absolute;
    top: 30px;
    right: -30px;
- }
+}
 
-.botao{
-   background-color:#ee2211;
-   color:#fff;
-   padding:0.87rem  1.87rem;
+.botao {
+   background-color: #ee2211;
+   color: var(--vantagens-itens);
+   padding: 0.87rem 1.87rem;
    border-radius: 4px;
    text-transform: uppercase;
    text-decoration: none;
-  
+   margin-top: 10px;
+  margin-right: 15px;
 }
-.botao:hover{
-   background:#b93939;
+
+.botao:hover {
+   background: #b14646;
 }
-.subtitulo{
+
+.subtituloVantagens {
    font-size: 4rem;
    text-transform: uppercase;
-   color: rgba(0,0 ,0 ,.2);
+   color: var(--subtituloVantagens);
    text-align: right;
    padding: 40px;
    align-self: center;
-  background-image: url(../onda.svg);
- 
+   background-image: url(../onda.svg);
+    
 }
-.vantagens{
-   background-color: #fff;
+
+.vantagens {
+   background-color: var(--fundo-2);
    padding: 0.5rem;
    letter-spacing: 0.1rem;
+   border-radius: 5px;
 }
-.vantagem-itens{
-   padding-top: 0%;
+
+.vantagem-itens,
+p,
+h3 {
+   padding-bottom: 5px;
+   padding:8px 4px;
    display: grid;
+   color: var(--vantagens-itens);
    grid-template-columns: auto 1fr;
-gap:0.65rem 1.25rem;
-padding: 1.3rem ;
-border-color: 4px solid #ee2211;
-}
-.vantagens-item:nth-child(odd) {
-   background: #f7f7f7;
- }
-.vantagem-itens a{
-grid-column: 2;
-}
-.vantagem-itens:hover{
+   gap: 0.65rem var(--paragrafo);
+   padding: 0.5rem;
    border-color: 4px solid #ee2211;
-}
-.vantagem-itens ,  h3{
-   font-size:1.5rem;
-}
-.vantagem-itens p{
-   grid-column: 2;
-}
-.rodape{
-  padding: 2.5rem;
-  box-sizing: border-box;
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  font-family:Roboto;
-  width: 100vw;
-  background:#fff;
-
-}
-.rodape p{
-   text-align:center;
-}
-@media(max-width:1000px){
-   .conteudo-vantagens{
-      grid-template-columns: 1fr;
-   }
-   .subtitulo{
-      text-align:center;
-   }
-}
-@media(max-width:1000px){
-   body{
-      gap: 30px;
-      margin-top:0px;
-
-   }
-   .header{
-      gap: 30px;
-   }
-   .introducao{
-      text-align:left;
-      justify-items: start;
-   }
-.conteudo{
-   grid-template-columns: 1fr;
-
-}
-.introducao::before{
-   display: none;
+   border-radius: 5px;
    
 }
-.subtitulo{
-   font-size: 3rem;
+
+.vantagens-item:nth-child(odd) {
+   background: var(--fundo-1);
 }
+
+.vantagem-itens a {
+   grid-column: 2;
+}
+
+.vantagem-itens:hover {
+   border-color: 4px solid #ee2211;
+}
+
+.vantagem-itens,
+h3 {
+   font-size: 1.5rem;
+}
+
+.vantagem-itens p {
+   grid-column: 2;
+}
+
+p.rodape{
+   display: block;
+   padding: 25px;
+   box-sizing: border-box;
+   text-transform: uppercase;
+   font-size: 1.2rem;
+   font-family: Roboto;
+   width: 100vw;
+   height: 10vh;
+   background: var(--rodape);
+   color: var(--vantagens-itens);
+   text-align: center;
+
+}
+
+@media(max-width:1000px) {
+   .conteudo-vantagens {
+      grid-template-columns: 1fr;
+   }
+
+   .subtitulo {
+      text-align: center;
+   }
+}
+
+@media(max-width:1000px) {
+   body {
+      gap: 30px;
+      margin-top: 0px;
+
+   }
+
+   .header {
+      gap: 30px;
+   }
+
+   .introducao {
+      text-align: left;
+      justify-items: start;
+   }
+
+   .conteudo {
+      grid-template-columns: 1fr;
+
+   }
+
+   .introducao::before {
+      display: none;
+
+   }
+
+   .subtitulo {
+      font-size: 3rem;
+   }
 }
